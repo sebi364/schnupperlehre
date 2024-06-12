@@ -33,11 +33,11 @@ jobs:
           python - <<'EOF'
           import json
           settings = json.load(open("./patches/settings-override.json", "r"))
-          outfile = json.load(open("./build/jupyter-lite.json", "r"))
+          outfile = json.load(open("./dist/jupyter-lite.json", "r"))
 
           outfile['settingsOverrides'] = settings
 
-          json.dump(outfile, open("./build/jupyter-lite.json", "w"), indent = 3)
+          json.dump(outfile, open("./dist/jupyter-lite.json", "w"), indent = 3)
           EOF
       
       - name: Upload artifact
