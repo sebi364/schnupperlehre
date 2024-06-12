@@ -14,19 +14,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
+      
       - name: Build the JupyterLite site
         run: |
           jupyter lite build --contents content --output-dir dist
-      #- name: Replace default config
-      #  run: |
-      #    cp repl/jupyter-lite.json dist/jupyter-lite.json
+      
+      - name: Edit default config
+        run: |
+          python - <<'EOF'
+          import json
+          settings = json.load(open("./patches/settings-override.json", "r"))
+          outfile = json.load(open("./build/jupyter-lite.json", "r"))
+
+          outfile['settingsOverrides'] = settings
+
+          json.dump(outfile, open("./build/jupyter-lite.json", "w"), indent = 3)
+          EOF
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
