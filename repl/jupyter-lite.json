@@ -9,6 +9,9 @@
     "settingsOverrides": {
       "@jupyterlab/apputils-extension:themes": {
         "theme": "JupyterLab Dark"
+      },
+      "@jupyterlab/translation-extension:plugin": {
+        "locale": "de-DE"
       }
     }
   }
