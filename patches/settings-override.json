@@ -1,6 +1,6 @@
 {
   "@jupyterlab/apputils-extension:themes": {
-    "theme": "JupyterLab Miami Nights"
+    "theme": "JupyterLab Dark"
   },
   "@jupyterlab/translation-extension:plugin": {
     "locale": "de_DE"
