@@ -18,18 +18,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Function to hide specific elements
     function hideSpecificElements() {
         const selectors = [
-            // hide options in cells
+            // options in cells
             '.jp-cell-toolbar.jp-cell-menu.jp-Toolbar.lm-Widget',
-            // hide options above notebook main field
+            // options above notebook main field
             '.jp-NotebookPanel-toolbar.jp-Toolbar.lm-Widget',
-            // hide file browser search menue
+            // file browser search menue
             '.jp-FileBrowser-toolbar.jp-SidePanel-toolbar.jp-Toolbar.lm-Widget',
-            // hide jupyter lite icon
+            // jupyter lite icon / logo
             '.f1xpzunt.lm-Widget',
-            // hide option for Table of Contents
+            // option for Table of Contents
             '#tab-key-1-3',
-            // hide option for simple mode
-            '#jp-single-document-mode'
+            // option for simple mode
+            '#jp-single-document-mode',
+            // kernel selection menue
+            'div.jp-StatusBar-Item.jp-mod-highlighted.lm-Widget:nth-of-type(5)',
+            // "click to add new cell"
+            '.jp-Notebook-footer.lm-Widget',
+            // Property ispector
+            '.lm-BoxPanel-child.jp-mod-right.jp-SideBar.lm-TabBar.lm-Widget > .lm-TabBar-content > .lm-TabBar-tab'
         ];
         
         selectors.forEach(selector => {
