@@ -1,7 +1,3 @@
-// Script that hides elements in jupyter notebook to prevent user from breaking stuff
-// This script is "injected" into ./dist/lab/index.html -> see pipeline
-// Author: Chat-GPT
-
 document.addEventListener('DOMContentLoaded', (event) => {
     // Use a mutation observer to ensure the elements are hidden even if the DOM changes
     const observer = new MutationObserver((mutations) => {
@@ -21,16 +17,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Function to hide specific elements
     function hideSpecificElements() {
-        // Query all elements with the specified class and hide them
-        const cellToolbars = document.querySelectorAll('.jp-cell-toolbar.jp-cell-menu.jp-Toolbar.lm-Widget');
-        cellToolbars.forEach(element => {
-            element.style.display = 'none';
-        });
-
-        // Query all elements matching the second selector and hide them
-        const toolbarButtons = document.querySelectorAll('.jp-NotebookPanel-toolbar.jp-Toolbar.lm-Widget > div.jp-Toolbar-item.jp-CommandToolbarButton.lm-Widget > .jp-ToolbarButtonComponent');
-        toolbarButtons.forEach(element => {
-            element.style.display = 'none';
+        const selectors = [
+            // hide options in cells
+            '.jp-cell-toolbar.jp-cell-menu.jp-Toolbar.lm-Widget',
+            // hide options above notebook main field
+            '.jp-NotebookPanel-toolbar.jp-Toolbar.lm-Widget',
+            // hide file browser search menue
+            '.jp-FileBrowser-toolbar.jp-SidePanel-toolbar.jp-Toolbar.lm-Widget',
+            // hide jupyter lite icon
+            '.f1xpzunt.lm-Widget',
+            // hide option for Table of Contents
+            '#tab-key-1-3',
+            // hide option for simple mode
+            '#jp-single-document-mode'
+        ];
+        
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                element.style.display = 'none';
+            });
         });
     }
 
@@ -74,7 +80,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // Initially hide specific elements and disable editing on double-click for Markdown cells when the script runs
+    // Initially hide specific elements, disable editing on double-click for Markdown cells, and override Shift + Enter behavior when the script runs
     hideSpecificElements();
     disableMarkdownEditing();
     overrideShiftEnterBehavior();
