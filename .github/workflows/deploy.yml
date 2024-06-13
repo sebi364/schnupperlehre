@@ -40,10 +40,10 @@ jobs:
           json.dump(outfile, open("./dist/jupyter-lite.json", "w"), indent = 3)
           EOF
 
-      - name: Include Javascript Patch for JupyterLite
+      - name: Include JavaScript Patch for JupyterLite
         run: |
-          cp ./patches/patch.js ./dist/patch.js
-          sed -i 's|</html>|<script src="/patch.js"></script></html>|' ./dist/lab/index.html
+          cp ./patches/patch.js ./dist/lab/patch.js
+          sed -i 's|</html>|<script src="./patch.js"></script></html>|' ./dist/lab/index.html
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
