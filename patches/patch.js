@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         mutations.forEach((mutation) => {
             if (mutation.addedNodes.length > 0) {
                 hideSpecificElements();
+                disableMarkdownEditing();
             }
         });
     });
@@ -32,6 +33,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // Initially hide specific elements when the script runs
+    // Function to disable editing on double-click for Markdown cells
+    function disableMarkdownEditing() {
+        // Query all Markdown cells
+        const markdownCells = document.querySelectorAll('.jp-Notebook-cell.jp-MarkdownCell.jp-Cell');
+        markdownCells.forEach(cell => {
+            // Remove any existing double-click event listeners
+            cell.removeEventListener('dblclick', preventMarkdownEdit);
+            // Add a new event listener to prevent editing on double-click
+            cell.addEventListener('dblclick', preventMarkdownEdit);
+        });
+    }
+
+    // Function to prevent the editing of Markdown cells
+    function preventMarkdownEdit(event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    // Initially hide specific elements and disable editing on double-click for Markdown cells when the script runs
     hideSpecificElements();
+    disableMarkdownEditing();
 });
