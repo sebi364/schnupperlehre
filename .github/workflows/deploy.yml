@@ -35,7 +35,7 @@ jobs:
           settings = json.load(open("./patches/settings-override.json", "r"))
           outfile = json.load(open("./dist/jupyter-lite.json", "r"))
 
-          outfile['settingsOverrides'] = settings
+          outfile['jupyter-config-data']['settingsOverrides'] = settings
 
           json.dump(outfile, open("./dist/jupyter-lite.json", "w"), indent = 3)
           EOF
