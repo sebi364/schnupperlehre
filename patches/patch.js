@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (mutation.addedNodes.length > 0) {
                 hideSpecificElements();
                 disableMarkdownEditing();
-                overrideShiftEnterBehavior();
             }
         });
     });
@@ -64,30 +63,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         event.stopPropagation();
     }
 
-    // Function to override Shift + Enter behavior
-    function overrideShiftEnterBehavior() {
-        // Remove the existing Shift + Enter shortcut
-        Jupyter.notebook.keyboard_manager.command_shortcuts.remove_shortcut('shift-enter');
-        Jupyter.notebook.keyboard_manager.edit_shortcuts.remove_shortcut('shift-enter');
-        
-        // Add a new Shift + Enter shortcut
-        Jupyter.notebook.keyboard_manager.command_shortcuts.add_shortcut('shift-enter', {
-            handler: function(event) {
-                Jupyter.notebook.execute_cell();
-                return false;
-            }
-        });
-
-        Jupyter.notebook.keyboard_manager.edit_shortcuts.add_shortcut('shift-enter', {
-            handler: function(event) {
-                Jupyter.notebook.execute_cell();
-                return false;
-            }
-        });
-    }
-
     // Initially hide specific elements, disable editing on double-click for Markdown cells, and override Shift + Enter behavior when the script runs
     hideSpecificElements();
     disableMarkdownEditing();
-    overrideShiftEnterBehavior();
 });
