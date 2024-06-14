@@ -20,15 +20,8 @@ jupyterlab-night
 # JupyterLab: Miami nights theme (optional)
 jupyterlab_miami_nights
 
-# Python: ipyevents library for Jupyter notebooks (optional)
-ipyevents>=2.0.1
-# Python: interative Matplotlib library for Jupyter notebooks (optional)
-ipympl>=0.8.2
-# Python: ipycanvas library for Jupyter notebooks (optional)
-ipycanvas>=0.9.1
-# Python: ipyleaflet library for Jupyter notebooks (optional)
-ipyleaflet
-
 # Python: plotting libraries (optional)
 plotly>=5,<6
 bqplot
+ipycanvas>=0.9.1
+ipympl>=0.8.2
