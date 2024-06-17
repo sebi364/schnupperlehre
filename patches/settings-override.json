@@ -247,5 +247,15 @@
         "rank": 1000
       }
     ]
+  },
+  "@jupyterlab/notebook-extension:tracker": {
+    "showEditorForReadOnlyMarkdown": false,
+    "codeCellConfig": {
+      "autoClosingBrackets": true,
+      "codeFolding": true,
+      "lineWrap": false,
+      "lineNumbers": true
+    },
+    "autoStartDefaultKernel": true
   }
 }
