@@ -42,7 +42,6 @@ jobs:
       
       - name: Change title of site
         run: |
-          cp ./patches/patch.js ./dist/lab/patch.js
           sed -i 's|<title>JupyterLite</title>|<title>/Schnuppertag/Lab</title>|' ./dist/lab/index.html
       
       - name: Upload artifact
