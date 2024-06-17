@@ -4,5 +4,8 @@
   },
   "@jupyterlab/translation-extension:plugin": {
     "locale": "de_DE"
+  },
+  "@jupyterlab/application-extension:main": {
+    "topArea": false
   }
 }
