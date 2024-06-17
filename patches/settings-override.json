@@ -1,11 +1,183 @@
 {
   "@jupyterlab/apputils-extension:themes": {
-    "theme": "JupyterLab Night"
+    "theme": "JupyterLab Light"
   },
   "@jupyterlab/translation-extension:plugin": {
     "locale": "de_DE"
   },
-  "@jupyterlab/application-extension:main": {
-    "topArea": false
+  "@jupyterlab/statusbar-extension:plugin": {
+    "visible": false
+  },
+  "@jupyterlab/cell-toolbar-extension:plugin": {
+    "toolbar": [
+      {
+        "name": "duplicate-cell",
+        "command": "notebook:duplicate-below",
+        "disabled": true
+      },
+      {
+        "name": "move-cell-up",
+        "command": "notebook:move-cell-up",
+        "disabled": true
+      },
+      {
+        "name": "move-cell-down",
+        "command": "notebook:move-cell-down",
+        "disabled": true
+      },
+      {
+        "name": "insert-cell-above",
+        "command": "notebook:insert-cell-above",
+        "disabled": true
+      },
+      {
+        "name": "insert-cell-below",
+        "command": "notebook:insert-cell-below",
+        "disabled": true
+      },
+      {
+        "command": "notebook:delete-cell",
+        "icon": "ui-components:delete",
+        "name": "delete-cell",
+        "disabled": true
+      }
+    ]
+  },
+  "@jupyterlab/docmanager-extension:plugin": {
+    "autosave": true,
+    "autosaveInterval": 10,
+    "confirmClosingDocument": false,
+    "lastModifiedCheckMargin": 500,
+    "defaultViewers": {},
+    "renameUntitledFileOnSave": true
+  },
+  "@jupyterlab/filebrowser-extension:widget": {
+    "toolbar": [
+      {
+        "name": "new-launcher",
+        "args": {},
+        "command": "launcher:create",
+        "disabled": true,
+        "rank": 1
+      },
+      {
+        "name": "new-directory",
+        "args": {},
+        "command": "filebrowser:create-new-directory",
+        "disabled": true,
+        "rank": 10
+      },
+      {
+        "name": "uploader",
+        "args": {},
+        "command": "",
+        "disabled": true,
+        "rank": 20
+      },
+      {
+        "name": "refresh",
+        "args": {},
+        "command": "filebrowser:refresh",
+        "disabled": true,
+        "rank": 30
+      },
+      {
+        "name": "fileNameSearcher",
+        "args": {},
+        "command": "",
+        "disabled": true,
+        "rank": 40
+      }
+    ]
+  },
+  "@jupyterlab/notebook-extension:panel": {
+    "toolbar": [
+      {
+        "name": "save",
+        "rank": 10,
+        "disabled": false
+      },
+      {
+        "name": "insert",
+        "command": "notebook:insert-cell-below",
+        "icon": "ui-components:add",
+        "rank": 20,
+        "disabled": true
+      },
+      {
+        "name": "cut",
+        "command": "notebook:cut-cell",
+        "rank": 21,
+        "disabled": true
+      },
+      {
+        "name": "copy",
+        "command": "notebook:copy-cell",
+        "rank": 22,
+        "disabled": true
+      },
+      {
+        "name": "paste",
+        "command": "notebook:paste-cell-below",
+        "rank": 23,
+        "disabled": true
+      },
+      {
+        "name": "run",
+        "command": "notebook:run-cell-and-select-next",
+        "rank": 30,
+        "disabled": false
+      },
+      {
+        "name": "interrupt",
+        "command": "notebook:interrupt-kernel",
+        "rank": 31,
+        "disabled": false
+      },
+      {
+        "name": "restart",
+        "command": "notebook:restart-kernel",
+        "rank": 32,
+        "disabled": false
+      },
+      {
+        "name": "restart-and-run",
+        "command": "notebook:restart-run-all",
+        "rank": 33,
+        "disabled": true
+      },
+      {
+        "name": "cellType",
+        "rank": 40,
+        "disabled": true
+      },
+      {
+        "name": "spacer",
+        "type": "spacer",
+        "rank": 100,
+        "disabled": false
+      },
+      {
+        "name": "interfaceSwitcher",
+        "rank": 990,
+        "disabled": true
+      },
+      {
+        "name": "kernelName",
+        "rank": 1000,
+        "disabled": false
+      },
+      {
+        "name": "executionProgress",
+        "rank": 1002,
+        "disabled": true
+      },
+      {
+        "name": "scrollbar",
+        "command": "notebook:toggle-virtual-scrollbar",
+        "rank": 1003,
+        "disabled": true
+      }
+    ]
   }
 }
