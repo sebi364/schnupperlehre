@@ -179,5 +179,73 @@
         "disabled": true
       }
     ]
+  },
+  "@jupyterlab/mainmenu-extension:plugin": {
+    "menus": [
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-file",
+        "items": [],
+        "label": "File",
+        "mnemonic": -1,
+        "rank": 1
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-edit",
+        "items": [],
+        "label": "Edit",
+        "mnemonic": -1,
+        "rank": 2
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-view",
+        "items": [],
+        "label": "View",
+        "mnemonic": -1,
+        "rank": 3
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-run",
+        "items": [],
+        "label": "Run",
+        "mnemonic": -1,
+        "rank": 4
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-kernel",
+        "items": [],
+        "label": "Kernel",
+        "mnemonic": -1,
+        "rank": 5
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-tabs",
+        "items": [],
+        "label": "Tabs",
+        "mnemonic": -1,
+        "rank": 500
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-settings",
+        "items": [],
+        "label": "Settings",
+        "mnemonic": -1,
+        "rank": 999
+      },
+      {
+        "disabled": true,
+        "id": "jp-mainmenu-help",
+        "items": [],
+        "label": "Help",
+        "mnemonic": -1,
+        "rank": 1000
+      }
+    ]
   }
 }
