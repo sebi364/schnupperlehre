@@ -45,7 +45,7 @@
   },
   "@jupyterlab/docmanager-extension:plugin": {
     "autosave": true,
-    "autosaveInterval": 10,
+    "autosaveInterval": 2,
     "confirmClosingDocument": false,
     "lastModifiedCheckMargin": 500,
     "defaultViewers": {},
