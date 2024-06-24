@@ -1,5 +1,6 @@
 # JupyterLite Environment for "Schnupperlernende"
 [![Build and Deploy](https://github.com/sebi364/schnupperlehre/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/sebi364/schnupperlehre/actions/workflows/deploy.yml)
+
 This repository contains the source files for a [JupyterLite](https://github.com/jupyterlite) environment, providing our "Schnupperlernende" (trial learners) with a convenient place to explore Python.
 
 ## Access the JupyterLite Site
