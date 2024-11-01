@@ -1,6 +1,10 @@
 {
   "@jupyterlab/apputils-extension:themes": {
-    "theme": "JupyterLab Light"
+    "theme": "Catppuccin Mocha"
+  },
+  "@jupyterlab/completer-extension:manager": {
+    "autoCompletion": true,
+    "showDocumentationPanel": true
   },
   "@jupyterlab/translation-extension:plugin": {
     "locale": "de_DE"
