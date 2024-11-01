@@ -5,7 +5,6 @@ notebook~=7.2.1
 
 # Python kernel (optional)
 jupyterlite-pyodide-kernel==0.4.1
-jupyterlite-xeus==2.1.2
 
 
 # Language support (optional)
