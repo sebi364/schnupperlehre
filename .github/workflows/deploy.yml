@@ -40,6 +40,11 @@ jobs:
           json.dump(outfile, open("./dist/jupyter-lite.json", "w"), indent = 3)
           EOF
       
+      - name: Include JavaScript Patch for JupyterLite
+        run: |
+          cp ./patches/patch.js ./dist/lab/patch.js
+          sed -i 's|</html>|<script src="./patch.js"></script></html>|' ./dist/lab/index.html
+          
       - name: Change title of site
         run: |
           sed -i 's|<title>JupyterLite</title>|<title>/Schnuppertag/Lab</title>|' ./dist/lab/index.html
