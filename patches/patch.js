@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         mutations.forEach((mutation) => {
             if (mutation.addedNodes.length > 0) {
                 hideSpecificElements();
-                disableMarkdownEditing();
             }
         });
     });

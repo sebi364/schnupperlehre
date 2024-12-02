@@ -3,7 +3,7 @@
     "theme": "Catppuccin Latte"
   },
   "@jupyterlab/completer-extension:manager": {
-    "autoCompletion": true
+    "autoCompletion": false
   },
   "@jupyterlab/translation-extension:plugin": {
     "locale": "de_DE"
