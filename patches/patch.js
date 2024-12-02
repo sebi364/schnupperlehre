@@ -36,25 +36,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // Function to disable editing on double-click for Markdown cells
-    function disableMarkdownEditing() {
-        // Query all Markdown cells
-        const markdownCells = document.querySelectorAll('.jp-Notebook-cell.jp-MarkdownCell.jp-Cell');
-        markdownCells.forEach(cell => {
-            // Remove any existing double-click event listeners
-            cell.removeEventListener('dblclick', preventMarkdownEdit);
-            // Add a new event listener to prevent editing on double-click
-            cell.addEventListener('dblclick', preventMarkdownEdit);
-        });
-    }
-
-    // Function to prevent the editing of Markdown cells
-    function preventMarkdownEdit(event) {
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
     // Initially hide specific elements, disable editing on double-click for Markdown cells, and override Shift + Enter behavior when the script runs
     hideSpecificElements();
-    disableMarkdownEditing();
 });
