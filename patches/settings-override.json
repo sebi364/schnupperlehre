@@ -1,6 +1,6 @@
 {
   "@jupyterlab/apputils-extension:themes": {
-    "theme": "Catppuccin Latte"
+    "theme": "Catppuccin Frappé"
   },
   "@jupyterlab/completer-extension:manager": {
     "autoCompletion": false
